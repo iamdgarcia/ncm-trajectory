@@ -1,0 +1,175 @@
+{
+ "meta": {
+  "checkpoint": "hazyresearch/ncm-checkpoints (tinystories)",
+  "paper": "https://arxiv.org/abs/2610.14162",
+  "repo": "https://github.com/HazyResearch/ncm",
+  "levels": [
+   1,
+   8,
+   16,
+   24,
+   32,
+   40,
+   52,
+   64,
+   76,
+   92,
+   108,
+   128
+  ],
+  "n_levels": 12,
+  "generation": {
+   "temperature": 1.0,
+   "top_k": 0,
+   "top_p": 1.0,
+   "unconditional": true
+  },
+  "note": "One forward pass per level; texts are the tokenizer's partial reconstruction of the generated codes after each level."
+ },
+ "samples": [
+  {
+   "seed": 42,
+   "level0_code": 2587,
+   "texts": [
+    ".",
+    " They a friendLook!\" his she!\"",
+    " and. They,. dog dog,!\" climb could might They?\" then.",
+    " and are like play. and big is isLook,!\"!\". to dad dog Ben hole\n you?\"\n He",
+    "\n are.. play.. they a dog The is\n squirrel says \" spray\n tree high dad small. sad holes himLook are doing\n. away",
+    "\n Ben. to outside. They and and they, the is is grass\", squirrel saysHe spray\n wants tree and sees a.. sad holes help\n, are doing. smiles back shows",
+    "\nLily Ben They to outside the. and places bugs One, a in. dog and grass\nLook, pine Lily. is and!\"\n to tree and. sees a. pet. sad holes They him\n, are you?\"\n hears. at shows",
+    "\nLily and friends They like play in play They, and and bugs One, a dog park The is and the.\nLook, little!\" says \" is and strong\n runs to squirrel and climb He sees small find pet Lily are sad hole They to him\"Look Ben you okay asks\nMom. She their.",
+    "\nLily and Ben are They like to in the. They for and and and. day they a big the. The is and towards grass.\",, a pine Lily.He is and strong\nTom wants the squirrel and to. He a small find pet. Lily are sad hole They to him.\", Ben are you?\" asks.Mom them. smiles their.",
+    "\n\nLily and Ben are They like to play in the. make make and and and and bugs One, they a big in the. The is running and the grass.\"Look, a pine tree says says \"He is and and!\"\nTom wants to pine and wants to. He sees a hole find.. Lily They sad sad hole. want help him.\"Look, Ben are you?\" Lily.\nMom them. She at faces.",
+    "\n\nLilyLily and are. They like like play outside in snow. They They for and and and and bugs. One day they a big dog in park. dog is running and eating grass..\n\",, a pine pine Lily says. \"He is and and strong\n\nTom to to the tree and to climb. He He a small hole find.. Lily Lily are sad sad the. They to help him.\"Look,, are are you?\"?\" asks.\nMom hears. She smiles at their faces",
+    "\n\n\nLily and Ben are friends. They like to play outside in the snow. They make holes and make flowers and catch bugs. One day, they see a dog in the park. The dog is barking and eating the grass.\n\"Look, Tom, a pine!\" Lily says. \"He is so big and strong!\"\n\nBen runs to the pine tree and wants to climb. He sees a small hole in the tree. Lily and Ben are sad for holes hole They want to help him.\n\"Look, Ben, are you okay?\" Lily asks.\nMom hears them. She smiles at their faces."
+   ]
+  },
+  {
+   "seed": 43,
+   "level0_code": 273,
+   "texts": [
+    ".",
+    " a.... said,.",
+    " a a he day red day it., said said my andDon your.",
+    " a a. he find day fun and. it hands walked, saidWhy\n, my His said't your.\" together",
+    "Once there little. sad his., a bowl and, was little, bushes. the, are\n saidI my?\" and, worry help.\", they",
+    "Once time a boy. sad he his. he a red He about Then it little But he the. found and \" are\n and, can my His at said \" worry you your So back and",
+    "Once a there a boy. sad because he his sun day he a, bowl thought about., was little So hands he the. kind squirrel asked \" you sad\n and,I find toy.\" mom him, \" worry can you mommy So Tim back and",
+    "\n a time was little boy. He sad because lost way in. day he a big red. thought about it, thought was a. hands slipped he the bushes kind squirrel him asked \" are so?\"Tim and, \" can find way The mom at and, \"'t I help find mommy.\" held's back and",
+    "\n upon time, was little boy named He sad sad he lost way in woods. day he saw big red fire He thought about to. He he was a heart. friend and turned the bushes kind bird him and, \" are so sad?\"Tim and said \"I't my way.\" slide looked him and, \"'t, can help find mommy.\" Tim Tim's back they",
+    "\nOnce a time, was little boy named. He sad sad because he lost way in woods. One, he a a, red fire He thought thought how get. He he was a little heart., he and into the bushes. kind squirrel found and asked \" are are so sad?\"Tim smiled and said \"I can find favorite way The kind looked looked him and, \"Don worry, can help you your mommy.\" Tim Tim squirrel back and they",
+    "\nOnce a a time there was little little boy named. was sad sad and he lost his way in the. It day, he a a,, red. He thought thought about to it. He thought it was a little heart., slipped and and into the bushes. kind bird squirrel him and asked, \" are so so sad?\"\nTim and said said,I can't my my way The The squirrel looked at him said said, \"'t, I can help you find mommy.\".\" Tim held squirrel's back and they",
+    "\nOnce upon a time, there was a little boy named Tim. He was sad and miserable because he lost his way in the woods. One day, he saw a big, red fire. He thought and thought about to get it. He thought it was a little heart. Suddenly, he slipped and looked into the bushes. A kind squirrel found him and asked, \"Why are you so sad Tim?\"\nTim smiled and said, \"I can't find my way out.\" The kind squirrel looked at him and said, \"Don't worry, I can help you find your mommy.\" So Tim held the squirrel's back and they"
+   ]
+  },
+  {
+   "seed": 44,
+   "level0_code": 2263,
+   "texts": [
+    ".",
+    " a.. the the.. was",
+    " a a to toOne a take a was was they it with fun was,",
+    " a a. to. itOne, car was could wing wanted He But a and. the. and. The,",
+    "Once there big. play string He it fly, a red dog because not. wanted. would\nTom and took it toy the and fun was. The,",
+    "Once, a cat. play a. would tail flyOne Tom a red The scared could not Tom encourage bird He be\nTom a and to. and the. and fun was frightened The happy,",
+    "Once a there a cat Tom to with a. would watch tail fly\n, saw new with wing dog scared could fly too Tom to the bird thought be help birdTom the whip took his He toy played the. laughed had The was not. was and,",
+    "\n a, was big cat Tom loved play with of string would it and watch fly.One Tom saw new with wing The bird scared could not its. Tom to the new. it be. the.Tom and whip and to his He the new with ball They laughed had fun The was not anymore bird happy said,",
+    "\n upon time there was big cat Tom Tom to play a of string He would zip and watch fly.One, Tom a new with little wing The was scared it not fly its. Tom to encourage new bird He it be fun\n little.Tom out his and took to home He the new played the ball They laughed had fun. new was not anymore The was happy said,",
+    "\nOnce a, there was big cat named Tom Tom to play with a of. He would zip and tail watch fly fly\nOne, Tom saw new car with little wing The bird was because could not fly with friends Tom Tom to help the bird bird He it would fun.\n bird.Tom took out balloon and took to his. He the the friend with the ball They all and and fun. new was was fearful anymore The was happy and said \"",
+    "\nOnce a a, there a big big cat Tom Tom loved to play play a of of.. would it and and liked watch fly fly.OneOne, saw a a new with a wing wing. The was scared it could could fly with friends. Tom Tom to help Tom the bird. He it would be fun. the bird took\nTom out his balloon whip took to to his. He the new new played with the. They all laughed and fun fun The The bird was not anymore anymore. bird happy and said, \"",
+    "\nOnce upon a time, there was a big cat named Tom. Tom loved to play with a ball of string. He would zip it and tail and watch it fly.\nOne day, Tom saw a new bird with a hurt wing. The bird was scared because it could not fly with its friends. Tom wanted to help support the new bird. He thought it would be fun to help the bird.\nTom took out his string and took it to his home. He and the new friend played with the ball. They all laughed and had fun. The new bird was not fearful anymore. The bird was happy and said, \""
+   ]
+  },
+  {
+   "seed": 45,
+   "level0_code": 475,
+   "texts": [
+    ".",
+    " was... was.. was",
+    " a a. was.... to were. saw. was was\n",
+    " a was named many. was theOne the\n, said to not were, saw. got many, drank again.",
+    "Once there girl She to his One wanted the worldLily asked a a mom had be and. wereThey track a. saw noise., the new.\n",
+    "Once there an girl She small and. day wanted the world.Lily her a. mom, she be and. was withThey big they big. and big toys Lily, the new. was!",
+    "Once a there an girl. lived small and. day Lily to the the world.Lily her could a. mom yes but had be and not. was with momThey a soon a door They and a room doors Lily nervous she her new. She happy\n",
+    "\n a, was adventurous named Lily She in small and explore One, Lily to the the world from.Lily her if for a. Her said, she had be and to them. was happy her. hopped a and found big door They and saw room with doors Lily nervous but she look and world She so happy\n",
+    "\n upon time there was adventurous girl Lily She lived a and and to. day, wanted explore the the world world side\nLily asked mom could a ride ride. mom yes, she to be careful was to out Lily was happy her was\n hopped a and they a big. went and saw big with many. Lily a, she wanted look the world. was excited happy\n",
+    "\n upon a, there was adventurous girl named Lily She lived a small house loved to. day, Lily wanted explore big big the world from side.\n asked her mom she on a ride. Her mom yes, but had to be careful and to to out Lily was so happy her had\n hopped a and and they a big door. went and saw a room with many. Lily a nervous, she wanted look at new again. was was excited!\n",
+    "\n upon upon a, there an adventurous girl girl Lily. She lived in a house and loved to. One,, Lily wanted to big big see the world world side.\nLily asked mom if she go on a ride. Her mom said, but she had to careful careful and not not break. Lily Lily was happy her mom mom.\n hopped a and and they found big big door. went and saw saw big room with many.. Lily a, but she she wanted look the adventures again again She so excited and!\n",
+    "\nOnce upon a time, there girl an adventurous girl named Lily. She lived in a small house and loved to explore. One day, Lily wanted to explore the big and see the world from the side.\nLily asked her mom if she go on a ride instead. Her mom said yes, but she had to be careful and careful not to break them. Lily was so happy with her mom.\nThey hopped and hopped and soon they found a big door. They went in and saw a big room with many doors. Lily was a nervous, but she wanted to look at the world again. She was excited and happy!\n"
+   ]
+  },
+  {
+   "seed": 46,
+   "level0_code": 3546,
+   "texts": [
+    ".",
+    ". was was was.\" so.",
+    "\n the. a\n is it to to to to\n can But. it",
+    "\n playing They at. tree day \" has it and the to.. to\nNo can Ben They. He not",
+    "\n playing the to water bugs big branches bugs\" a has Sara \" to. to the She the She and\n that can!\" to butterflyBen. He the",
+    "\n Ben playing garden to water for saw tree branches bugs\n is. has Sara\" Ben catch. to the tree cast a She him.\",'t!\". to butterflyBen his. not was",
+    "\nSara Ben in garden liked dig water bugs They a with branches had bugs\n is. It spikes said\" Ben to the. to the and it cast butterfly stick She to pushed\nNo,'t it cried She catch butterfly.Ben his. did that the",
+    "\nSara Ben playing in garden liked dig dirt look bugs They a tree with branches It a.\" is. has sharp Sara.\n and to it the. to the and climb. cast a with. showed to and.\",,'t it Sara. She to the too\n shook his. He not that Sara",
+    "\n\n and Ben playing the. They to the water look bugs. saw a tree many. It a.\nIt a. It sharp spikes Sara.\nI to it,\" said. to the and to it. caught a butterfly a. showed to and.\"No,,'t catch!\" Sara. wanted to the too.Ben shook shook head He did like the Sara",
+    "\n\nSara Ben Ben playing in garden They liked to the water look for bugs They saw big tree with branches. It a bugs.\nIt a bug. It sharp,\" Sara..\"I to it it,\" said. to the tree and to it. She cast a butterfly a. showed showed to and.\"\",,,'t catch it Sara Sara. She to the the too.Ben shook and his head He did not that the the",
+    "\n\nSara and Ben playing playing in the. They to dig the the water look bugs. They They a tree with with branches. It a a butterfly.\" is a a. It has sharp,\" Sara said.\nII and catch,\",\" said said. to the the tree and to it. She caught the butterfly with a. She showed to to and pushed\n\"No,,,'t catch it!\" Sara cried She wanted to to the too..\nBen shook shook his head. did not that that the Sara",
+    "\n\n\nSara and Ben were playing in the garden. They liked to dig the dirt and look for bugs. They saw a big tree with many branches. It was a butterfly.\n\"It is a bug. It has sharp spikes,\" Sara said.\n\"I want to catch it,\" Ben said. He ran to the tree and tried to climb it. She caught a butterfly with a stick. She showed it to Ben and.\n\"No, Ben, you can't catch it!\" Sara cried. She wanted to catch the butterfly too.\nBen frowned and shook his head. He did not like that that Sara touched"
+   ]
+  },
+  {
+   "seed": 47,
+   "level0_code": 1987,
+   "texts": [
+    ".",
+    " a was very. to.. dog",
+    " a cat in in very blue\n\n and youB wind. down and up",
+    " upon a.. day join harbor was. the a\n he play the person wind and funJust down. The him",
+    "\n there big. to One Kitty the harbor quiet ducks happy park a tree dancing. and. up the climbed tree and of\n, from. The wanted for",
+    "Once, a cat. soar sky day went the The was where was happy the Tim big, animals. and play. up theuesday up the and of. then bird from. at mommy to tower",
+    "\n a there a cat. loved high sky One Kitty to the. park and the was happy\n quiet Kitty a tree little dancing. and wanted play. Kitty climb the up up up. and lots fun\n, bird from sky The scared The wanted the too",
+    "\n upon, was big cat. Kitty to high the. day went to park The park very and many and were\nIn park Kitty a big little and playing. got and to play., to the tree H up she up They games lots fun.Just, came from the. bird Kitty The just to too.",
+    "\n upon time, was big cat Kitty Kitty loved soar in sky. day Kitty to a park. park was and where many and were.In the park Kitty saw big tree little animals playing. got and wanted to too., up climb the. and and and went. played and had of.Just then big came down the sky The at Kitty! bird wanted to too.",
+    "\n upon a, there was big cat named. Kitty loved soar high in sky. day, went to a park. The park and and quiet many and were were.In the park, Kitty a big tree little little animals playing.. and wanted wanted to too. So Kitty up climb the. Up and and and went up. played and had of fun.\n then a bird down from the sky The, barked Kitty The mommy wanted to help too.",
+    "\n upon a a, there a big big cat named. Kitty loved to soar in sky. One sunny, went to a a park The The park was and and where many birds and were happy\nInIn the park Kitty saw a big tree little animals and animals playing.. got and wanted to play too too., up to to climb tree. and and and up she up. played played games had of fun..Just, a big bird down from the sky. the barked Kitty Kitty The bird wanted to help too too.",
+    "\nOnce upon a time, there was a big cat named Kitty. Kitty loved to soar high in the sky. One day, Kitty went to a quiet park. The park was quiet and quiet where many birds and flowers were happy.\nIn the quiet park, Kitty saw a big tree with little animals and animals playing there. Kitty got wanted and wanted to play too. So, Kitty started to climb the tree. Up up and up, she went. They played games and had lots of fun.\nJust then, a bird came down from the sky. The bird barked at Kitty! The bird just wanted to help too. Kitty"
+   ]
+  },
+  {
+   "seed": 48,
+   "level0_code": 2761,
+   "texts": [
+    ".",
+    ".. was.. I.\".",
+    "\n the was had..\n..,\n I.\" should he.",
+    "One Tim the friends. had. to big\n\n He big small and real it a. to you he that some",
+    "One little to park played the had eating the and something his\n\n and He big small picked to prune As a named the and might was but remembered friends some",
+    "One little Tim to park with with and had. Tim the He something his\n the looked at. big the He up to grape As ate a kid the, and might was, remembered his had find",
+    "One, boy Tim to the He his big big had of. remembered to. He big his.As got the at. saw big juicy the He up to eat grape. ate, little named to park laughing you help. scared but he that had to some",
+    "\n day a boy Tim to the. with friends on big and lots fun. Tim to a snack He something his tree.As closer the tree at. saw big grape on ground picked up and to eat grape\n ate, another kid Sam to the, and wanted help\n was scared then remembered that friends had find started",
+    "\n day a little named went to at park played with friends on big, had lots fun. Tim remembered find photo. noticed big his tree tree\n Tim closer to tree and at. saw a juicy on the. picked up fruit started eat the.\n he the, another kid Sam to the, laughing and it help.Tim scared but then remembered that his had to find and",
+    "\n day, little little named went to play the park played with his friends the big and had lots of fun. Tim remembered to a snack. He something near his tree tree\nAs got closer the tree and looked it He saw a big grape on the. He up fruit and to eat the grape. As he the, another kid named Sam came to park Sam laughing and wanted's help. was scared, then he remembered that friends had said to some and",
+    "\n day, a little boy named went to play at park He played played with friends on big big, and lots lots fun fun. Tim Tim to to find snack. He noticed something his big tree tree.\n Tim closer to the the and looked it. He saw a big juicy on on ground. picked picked up fruit started to eat eat big.\n As he the, another another kid named Sam came to park park Sam laughing and wanted might help.Tim was scared, but then remembered remembered that his had him to find some and",
+    "\nOne day, a little boy named Tim went to play at the. He played with his friends on the big slide, and had lots of fun. Today, Tim needed to find a snack. He noticed something big near his big tree.\nAs Tim got closer to the tree and looked at it. He saw a big juicy grape on the ground. He picked up the fruit and started to eat the grape grape. As he ate the grape, another little kid named Sam came to the park. Sam laughed and wanted Tim's help.\nTim was scared, but then he remembered that his friends had dared him to find some and"
+   ]
+  },
+  {
+   "seed": 49,
+   "level0_code": 2650,
+   "texts": [
+    ".",
+    ".. to,. to was,",
+    "One. always the very when said, looked was to. was.\n,",
+    "One Lily play her. bright. when in the said Tim!\" a a Tim are. the. \" to,,",
+    "One little to. her very The the tree. was toys on\n \" Lily!\" and tiny my said \"?\".. The andThank Amy to toys the",
+    "One little Lily play. red she much sun the tree The happy played her the! said \" Lily!\" Lily a fairy \". her?\" was. The kitten very saidThank.\" to her. the",
+    "One, girl Lily play. her red loved much The bright the big tree Lily happy played her the and!The,,! your Lily around a fairy. to's her She the Lily let. The was happy saidThank, and to her.Then the",
+    "\n day little named went to outside wore her dress loved much The sun and bright big tree Lily very when she with in the grass\nThe,Hi,! your!\" looked and tiny bug fairy came unlock's her She used from. let dress. fairy very happy saidThank you!\" smiled to play her., fairy",
+    "\n day a girl named went play outside She her red that loved very. sun was and under a tree. was very when played with toys in the and\nThe said \"Hi Lily! your!\" Lily around saw tiny fairy. was to the's her. used flower a. let dress. The was very and said \" you,!\" and to play her toys\n, fairy",
+    "\nOne, little girl named Lily to play outside She her red that that loved much. The sun warm and under a big to. Lily very when she played with toys in grass and!\n tiny said \" \",!! your dress Lily looked and saw tiny fairy. The was to the's her finger. felt flower from a and let the.. fairy was very happy said \"Thank you,!\" smiled and to play her toys.Then the fairy",
+    "\nOne day a little girl Lily Lily to play outside She always wore her red that she very much. The sun warm warm and bright big big tree bow. was happy when she played with toys in in the grass and\nA tiny fairy,Hi, Lily!! your dress!\" Lily around and a tiny tiny fairy. was to unlock the sewing with her.. She a from a a and let the.. The fairy was happy happy said said \"Thank, Lily!\"!\" and continued to play with toys.Then, the fairy",
+    "\nOne day, a little girl named Lily went to play outside. She wore her red dress that she loved very much. The sun was warm and bright under a big tree to. Lily was very happy when she played with her toys in the soft grass.\nA tiny fairy said, \"Hi, Lily! Try your dress!\" Lily looked around and saw a tiny fairy. The fairy came to unlock the dress with her finger. She used a leaf from a leaf and let the dress heal. The fairy was very happy and said, \"Thank you, Lily!\" smiled and continued to play with her toys.\nThen, the fairy"
+   ]
+  }
+ ]
+}

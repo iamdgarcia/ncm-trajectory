@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NCM Trajectory: watch a story sharpen, level by level</title>
+<meta name="description" content="Replay real coarse-to-fine generations from HazyResearch's Next-Concept Modeling: one forward pass per level, from 1 concept code to 128.">
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --border: #30363d;
+    --text: #e6edf3; --muted: #8b949e; --accent: #79c0ff; --new: #7ee787;
+    --gone: #6e7681; --code: #ffa657;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 880px; margin: 0 auto; padding: 24px 20px 64px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 { font-size: 26px; margin: 8px 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  .learn {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 18px; margin: 0 0 20px;
+  }
+  .learn b { color: var(--accent); }
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 10px;
+  }
+  button, .chip {
+    background: var(--panel); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 14px;
+  }
+  button:hover, .chip:hover { border-color: var(--accent); }
+  .chip.active { background: #1f6feb33; border-color: var(--accent); }
+  .chip.done { color: var(--muted); }
+  #play { min-width: 84px; }
+  .meter { display: flex; align-items: center; gap: 10px; margin: 6px 0 18px; }
+  .bar { flex: 1; height: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .bar > div { height: 100%; width: 1%; background: linear-gradient(90deg, #f0883e, var(--code)); transition: width .35s ease; }
+  .meter span { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .stage {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 22px; min-height: 300px; font-size: 17px; line-height: 1.7;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  .stage .w-new { color: var(--new); }
+  .stage .w-gone { color: var(--gone); text-decoration: line-through; }
+  .caption { color: var(--muted); font-size: 13px; margin: 10px 2px 24px; }
+  .about { border-top: 1px solid var(--border); margin-top: 36px; padding-top: 18px; color: var(--muted); font-size: 14px; }
+  .about h2 { color: var(--text); font-size: 17px; margin: 18px 0 6px; }
+  code { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-size: 13px; }
+  .lvl-label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <h1>NCM Trajectory</h1>
+  <p class="sub">Watch a Next-Concept Model write a story in parallel sweeps, coarse to fine.</p>
+
+  <div class="learn">
+    <b>What you'll learn:</b> NCM (HazyResearch) doesn't write token by token. It generates
+    a hierarchy of concept codes coarse to fine: <b>one forward pass per level</b>. Replay real
+    generations below and you'll see the same story sharpen 12 times: after half the sweeps it is
+    word salad with the characters already in place; it only becomes readable in the last three.
+    <br><b>What to do:</b> pick a story, press <b>Play</b>, or click any level to jump.
+  </div>
+
+  <div class="controls">
+    <button id="play">&#9654; Play</button>
+    <span style="color:var(--muted);font-size:13px">story:</span>
+    <span id="stories"></span>
+  </div>
+  <div class="controls" id="levels"></div>
+  <div class="meter">
+    <div class="bar"><div id="fill"></div></div>
+    <span id="codecount"></span>
+  </div>
+
+  <div class="lvl-label" id="lvltext"></div>
+  <div class="stage" id="stage"></div>
+  <div class="caption" id="caption"></div>
+
+  <div class="about">
+    <h2>What is going on here</h2>
+    <p>
+      A <a href="https://arxiv.org/abs/2610.14162">Next-Concept Model</a> compresses text with a
+      multiscale residual VQ tokenizer: the same 128-position story becomes 12 nested sets of discrete
+      codes, from <b>1</b> code (the topic) to <b>128</b> codes (every position). The generator predicts
+      that hierarchy coarse to fine; positions inside a level come out in parallel.
+    </p>
+    <p>
+      The texts above are not samples of increasing quality: they are the tokenizer's
+      <em>partial reconstruction</em> of the codes generated so far, after each of the 12 sweeps of one
+      real generation. Green words are new at this level; struck-through words disappeared.
+    </p>
+    <h2>Reproduce it</h2>
+    <p>
+      Trajectories were captured on CPU with the released
+      <a href="https://huggingface.co/hazyresearch/ncm-checkpoints">TinyStories checkpoint</a> using
+      <code>tools/capture_trajectories.py</code> in this repo (it reuses the model code of
+      <a href="https://github.com/HazyResearch/ncm">HazyResearch/ncm</a>, MIT). Run it on any NCM
+      checkpoint or prompt set and drop the JSON here.
+    </p>
+    <p>
+      Paper: <a href="https://arxiv.org/abs/2610.14162">Next-Concept Modeling (arXiv 2610.14162)</a> ·
+      Code + data: <a href="https://github.com/iamdgarcia/ncm-trajectory">iamdgarcia/ncm-trajectory</a> ·
+      Built by <a href="https://huggingface.co/iamdgarcia">iamdgarcia</a>.
+    </p>
+  </div>
+
+<script>
+const LEVEL_NAMES = ["1 code","8","16","24","32","40","52","64","76","92","108","128"];
+let DATA = null, story = 0, level = 0, timer = null;
+
+function words(s) { return s.split(/(\s+)/).filter(w => w.trim().length > 0); }
+
+function render() {
+  const s = DATA.samples[story];
+  const cur = words(s.texts[level]);
+  const prev = level > 0 ? new Set(words(s.texts[level-1])) : null;
+  const next = level < s.texts.length-1 ? new Set(words(s.texts[level+1])) : null;
+  const el = document.getElementById("stage");
+  el.innerHTML = "";
+  cur.forEach(w => {
+    const span = document.createElement("span");
+    span.textContent = w + " ";
+    if (prev && !prev.has(w)) span.className = "w-new";
+    else if (next && !next.has(w)) span.className = "w-gone";
+    el.appendChild(span);
+  });
+  const codes = DATA.meta.levels[level];
+  document.getElementById("fill").style.width = (100*codes/DATA.meta.levels.at(-1)).toFixed(1) + "%";
+  document.getElementById("codecount").textContent = codes + " / 128 concept codes";
+  document.getElementById("lvltext").textContent =
+    "after sweep " + (level+1) + " of " + DATA.meta.n_levels;
+  document.getElementById("caption").textContent = s.texts[level].length >= 700
+    ? "text truncated for display" : "";
+  document.querySelectorAll("#levels .chip").forEach((c,i) => {
+    c.classList.toggle("active", i === level);
+    c.classList.toggle("done", i < level);
+  });
+  document.querySelectorAll("#stories .chip").forEach((c,i) => {
+    c.classList.toggle("active", i === story);
+    c.textContent = "story " + (i+1);
+  });
+}
+
+function stop() { clearInterval(timer); timer = null; document.getElementById("play").innerHTML = "&#9654; Play"; }
+function play() {
+  stop();
+  if (level >= DATA.meta.n_levels - 1) level = -1;
+  document.getElementById("play").innerHTML = "&#10074;&#10074; Pause";
+  timer = setInterval(() => {
+    level++;
+    if (level >= DATA.meta.n_levels - 1) { render(); stop(); return; }
+    render();
+  }, 1400);
+}
+
+function build() {
+  const stories = document.getElementById("stories");
+  DATA.samples.forEach((s,i) => {
+    const b = document.createElement("button");
+    b.className = "chip";
+    b.onclick = () => { story = i; level = 0; render(); };
+    stories.appendChild(b);
+  });
+  const levels = document.getElementById("levels");
+  LEVEL_NAMES.forEach((n,i) => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = n;
+    b.title = "level " + i;
+    b.onclick = () => { stop(); level = i; render(); };
+    levels.appendChild(b);
+  });
+  document.getElementById("play").onclick = () => timer ? stop() : play();
+  render();
+}
+
+fetch("trajectories/tinystories.json")
+  .then(r => r.json())
+  .then(d => { DATA = d; build(); })
+  .catch(() => { document.getElementById("stage").textContent = "Failed to load trajectories JSON."; });
+</script>
+</body>
+</html>
